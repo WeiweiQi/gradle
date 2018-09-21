@@ -27,7 +27,7 @@ import org.gradle.api.Project
 import org.gradle.api.XmlProvider
 import org.gradle.api.plugins.ExtensionAware
 import org.gradle.api.plugins.JavaPlugin
-import org.gradle.api.tasks.Copy
+import org.gradle.api.tasks.Sync
 import org.gradle.gradlebuild.BuildEnvironment
 import org.gradle.gradlebuild.ProjectGroups.projectsRequiringLanguageLevel8
 import org.gradle.gradlebuild.PublicApi
@@ -530,7 +530,7 @@ open class IdePlugin : Plugin<Project> {
     fun getDefaultJunitVmParameters(docsProject: Project): String {
         val rootProject = docsProject.rootProject
         val releaseNotesMarkdown: PegDown by docsProject.tasks
-        val releaseNotes: Copy by docsProject.tasks
+        val releaseNotes: Sync by docsProject.tasks
         val vmParameter = mutableListOf(
             "-ea",
             "-Dorg.gradle.docs.releasenotes.source=${releaseNotesMarkdown.markdownFile}",

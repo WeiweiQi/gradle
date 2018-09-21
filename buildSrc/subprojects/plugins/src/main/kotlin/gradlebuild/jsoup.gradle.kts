@@ -15,8 +15,8 @@
  */
 package gradlebuild
 
-import org.gradle.plugins.jsoup.JsoupCopyExtension
+import org.gradle.plugins.jsoup.JsoupSyncExtension
 
-tasks.withType<Copy>().configureEach {
-    extensions.create<JsoupCopyExtension>("jsoup", this)
+tasks.withType<Sync>().configureEach {
+    extensions.create<JsoupSyncExtension>("jsoup", this)
 }

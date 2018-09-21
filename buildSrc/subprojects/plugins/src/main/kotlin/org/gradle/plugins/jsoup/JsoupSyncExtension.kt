@@ -18,7 +18,7 @@ package org.gradle.plugins.jsoup
 import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.file.FileCopyDetails
-import org.gradle.api.tasks.Copy
+import org.gradle.api.tasks.Sync
 import org.gradle.api.tasks.TaskInputs
 import org.jsoup.nodes.Document
 
@@ -32,7 +32,7 @@ val DEFAULT_TRANSFORM_EXTENSIONS = listOf("html")
 class JsoupTransformTarget(val document: Document, val fileCopyDetails: FileCopyDetails)
 
 
-open class JsoupCopyExtension(private val task: Copy) {
+open class JsoupSyncExtension(private val task: Sync) {
 
     val project: Project
         get() = task.project
@@ -45,7 +45,7 @@ open class JsoupCopyExtension(private val task: Copy) {
             inputs.file(it)
             project.apply {
                 from(it)
-                to(this@JsoupCopyExtension)
+                to(this@JsoupSyncExtension)
             }
         }
 
