@@ -197,5 +197,10 @@ public class DefaultProjectStateRegistry implements ProjectStateRegistry {
                 }
             });
         }
+
+        @Override
+        public boolean hasMutableState() {
+            return workerLeaseService.getCurrentProjectLocks().contains(projectLock);
+        }
     }
 }
