@@ -41,7 +41,7 @@ val originalUrls: Map<String, String> = mapOf(
     "gradle-libs" to "https://repo.gradle.org/gradle/libs",
     "gradle-releases" to "https://repo.gradle.org/gradle/libs-releases",
     "gradle-snapshots" to "https://repo.gradle.org/gradle/libs-snapshots",
-    "kotlindev" to "https://dl.bintray.com/kotlin/kotlin-dev/",
+    "kotlindev" to "https://dl.bintray.com/kotlin/kotlin-eap/",
     "kotlineap" to "https://dl.bintray.com/kotlin/kotlin-eap/"
 )
 
